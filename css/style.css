@@ -202,7 +202,7 @@ section {
 
 .container {
     padding: 1rem;
-    max-width: 75ch; /* based on how many char is on the line */
+    max-width: 75ch;
     margin-left: auto;
     margin-right: auto;
 }
@@ -218,7 +218,6 @@ h1 {
     text-align: center;
     position: relative;
 }
-
 
 /* a {
     color: var(--clr-primary-200);
@@ -236,6 +235,7 @@ a:focus {
     text-decoration-thickness:  1.4em;
     text-underline-offset: -1em; 
 } */
+
 h1::after {
     content: "";
     display: block;
@@ -322,12 +322,10 @@ nav a:focus {
     gap: 0.5em;
     background: var(--clr-orange);
     padding: .3em .75em;
-    /* line-height: 1; */
 }
 .link-github span {
     width: 1em;
     display: flex;
-    /* line-height: 0; */
 }
 .link-github svg {
     width: 1em;
@@ -355,9 +353,66 @@ nav a:focus {
     margin-bottom: var(--gap);
     border-radius: 0.2em;
     break-inside: avoid;
-/*     overflow-wrap: break-word; */
 }
 #about section:nth-of-type(2) p:nth-of-type(2) {
     font-weight: var(--fw-bold);
     color: var(--clr-primary-500);
 } 
+@media (min-width: 37em) {
+    article .container {
+        display: grid;
+        column-gap: 1em;
+        grid-template-columns: 1fr 5fr;
+    }
+    article h2 {
+        grid-column: 1 / 2;
+        position: sticky;
+        top: 7em;
+        font-size: 1rem;
+    }
+    article *:not(h2) {
+        grid-column: 2 / 3;
+    }
+    article p:first-of-type {
+        margin: 0;
+    }
+}
+.page-footer {
+    background: var(--clr-primary-400);
+    color: var(--clr-light);
+}
+.page-footer a {
+    color: var(--clr-primary-100);
+}
+
+#sponsor-footer {
+    width: 100%;
+    max-width: 100%;
+    background: var(--clr-primary-500);
+    color: var(--clr-light);
+    padding: 1rem;
+}
+#sponsor-footer p {
+    max-width: 70ch;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    font-size: 1rem;
+    color: var(--clr-orange);
+}
+#sponsor-footer .sponsor-button {
+    color: var(--clr-light);
+    display: inline-flex;
+    font-size: 0.9rem;
+    line-height: 1;
+    text-align: center;
+    border: 4px solid var(--clr-orange);
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin-left: 15px;
+    transition: 180ms all ease-in-out; 
+}
+#sponsor-footer .sponsor-button:hover {
+    color: #e5e5e5;
+    border: 2px solid var(--clr-orange);
+}
