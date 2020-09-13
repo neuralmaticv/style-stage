@@ -54,12 +54,6 @@ blockquote {
   margin: 0;
 }
 
-/* Set core root defaults */
-html {
-  scroll-behavior: smooth;
-  overflow-x: hidden; 
-}
-
 /* Set core body defaults */
 body {
   min-height: 100vh;
@@ -106,7 +100,12 @@ select {
 
 html {
     scrollbar-color: var(--clr-primary-300) var(--clr-primary-500);
-    /* scrollbar-width: thin; */
+    font-size: 1.25rem;
+    font-size: clamp(1rem, 5vw, 1rem);
+    background: var(--clr-light);
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+    overflow-x: hidden; 
 }
 
 ::-webkit-scrollbar {
@@ -134,13 +133,6 @@ header {
 ::selection {
     color: var(--clr-dark);
     background: var(--clr-orange);
-}
-
-html {
-    font-size: 1.25rem;
-    font-size: clamp(1rem, 5vw, 1rem);
-    background: var(--clr-light);
-    scroll-padding-top: 7rem;
 }
 
 body {
@@ -214,27 +206,9 @@ h1 {
     line-height: 0.9;
     width: 100vw;
     margin: 1rem calc(-50vw + 50%);
-    /* transform: translateX(-50%); */
     text-align: center;
     position: relative;
 }
-
-/* a {
-    color: var(--clr-primary-200);
-    font-weight: var(--fw-bold);
-    text-decoration-color: var(--clr-primary-400);
-    text-underline-offset: 0.15em;
-    text-decoration-thickness: 0.1em;
-    transition: all 250ms;
-    text-decoration-skip-ink: none;
-}
-
-a:hover, 
-a:focus {
-    text-decoration-color: var(--clr-primary-400);
-    text-decoration-thickness:  1.4em;
-    text-underline-offset: -1em; 
-} */
 
 h1::after {
     content: "";
