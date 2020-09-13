@@ -1,0 +1,363 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+    --ff-body: "PT Sanns", sans-serif;
+    --ff-heading: "PT Sans Narrow", sans-serif;
+
+    --fw-normal: 400;
+    --fw-bold: 700;
+
+    --clr-primary-100: #6fd7ec;
+    --clr-primary-200: #4e96b8;
+    --clr-primary-300: #3a7094;
+    --clr-primary-400: #293b63;
+    --clr-primary-500: #14213d;
+
+    --clr-accent: #a3a3a3;
+    --clr-orange: #fca311;
+
+
+    --clr-light: #FFFFFF;
+    --clr-dark: #000000;
+
+    --clr-gradient: linear-gradient( 
+        var(--clr-primary-100), 
+        var(--clr-primary-500)
+    );
+
+    --clr--svg-1: invert(69%) sepia(50%) saturate(1936%) hue-rotate(351deg) brightness(100%) contrast(98%);
+    --clr--svg-2: invert(11%) sepia(8%) saturate(6128%) hue-rotate(188deg) brightness(92%) contrast(94%);
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+figure,
+blockquote {
+  margin: 0;
+}
+
+/* Set core root defaults */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden; 
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.6;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+section > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+:focus {
+    outline: 2px solid var(--clr-accent);
+    outline-offset: 2px;
+}
+
+html {
+    scrollbar-color: var(--clr-primary-300) var(--clr-primary-500);
+    /* scrollbar-width: thin; */
+}
+
+::-webkit-scrollbar {
+    background: var(--clr-primary-500);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--clr-primary-300);
+    border-radius: 100vw;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+header {
+    background-image: var(--clr-gradient);
+}
+
+::selection {
+    color: var(--clr-dark);
+    background: var(--clr-orange);
+}
+
+html {
+    font-size: 1.25rem;
+    font-size: clamp(1rem, 5vw, 1rem);
+    background: var(--clr-light);
+    scroll-padding-top: 7rem;
+}
+
+body {
+    margin: 0;
+    font-family: var(--ff-body);
+    line-height: 1.6;
+    font-size: 1.25rem;
+}
+
+.skip-link:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+svg { 
+    filter: var(--clr--svg-2);
+}
+
+h1, 
+h2, 
+h3 {
+    font-family: var(--ff-heading);
+}
+
+a{
+    color: var(--clr-primary-300);
+    font-weight: var(--fw-bold);
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+a:not(.link-github)::after {
+    content: "";
+    position: absolute;
+    left: -0.1em;
+    right: -0.1em;
+    bottom: 0;
+    height: 3px;
+    background-color: var(--clr-orange);
+    z-index: -1;
+    transition: transform 125ms ease-in-out;
+    transform-origin: bottom;
+}
+a:hover:after,
+a:focus:after {
+    transform: scaleY(3);
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+.container {
+    padding: 1rem;
+    max-width: 75ch; /* based on how many char is on the line */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    color: var(--clr-light);
+    font-size: clamp(5rem, 20vw, 8rem);
+    text-transform: uppercase;
+    line-height: 0.9;
+    width: 100vw;
+    margin: 1rem calc(-50vw + 50%);
+    /* transform: translateX(-50%); */
+    text-align: center;
+    position: relative;
+}
+
+
+/* a {
+    color: var(--clr-primary-200);
+    font-weight: var(--fw-bold);
+    text-decoration-color: var(--clr-primary-400);
+    text-underline-offset: 0.15em;
+    text-decoration-thickness: 0.1em;
+    transition: all 250ms;
+    text-decoration-skip-ink: none;
+}
+
+a:hover, 
+a:focus {
+    text-decoration-color: var(--clr-primary-400);
+    text-decoration-thickness:  1.4em;
+    text-underline-offset: -1em; 
+} */
+h1::after {
+    content: "";
+    display: block;
+    height: 5px;
+    background: var(--clr-orange);
+    width: 40%;
+    margin: 2rem auto;
+    opacity: 0.8;
+}
+
+h1 + h2 {
+    font-size: clamp(2rem, 20vw, 2.5rem);
+    line-height: 1;
+    color: var(--clr-orange);
+}
+
+article h2 {
+    font-size: 2rem;
+    line-height: 1;
+    background-color: var(--clr-primary-400);
+    color: var(--clr-orange);
+    align-self: start;
+    padding: 0.5em;
+    border-radius: 0.25em;
+}
+
+header {
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    color: var(--clr-primary-100);
+}
+
+header > .container > * + * {
+    margin-top: 2rem;
+}
+
+header a {
+    color: var(--clr-light);
+}
+nav {
+    --border: 0.3em;
+    background: var(--clr-primary-500);
+    padding: 1.5em;
+    margin: 0 0 2em 0;
+    border-top: 0.3em solid var(--clr-orange);
+    border-bottom: 0.3em solid var(--clr-orange);
+}
+
+@media (min-width: 37em) {
+    nav {
+        position: sticky;
+        z-index: 100;
+        top: calc(var(--border)* -1);
+        bottom: calc(var(--border)* -1);
+    }
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav a{
+    color: var(--clr-light);
+}
+nav a::before,
+nav a::after {
+    display: none;
+}
+
+nav a:hover,
+nav a:focus {
+    color: var(--clr-primary-300);
+}
+
+.link-github {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    background: var(--clr-orange);
+    padding: .3em .75em;
+    /* line-height: 1; */
+}
+.link-github span {
+    width: 1em;
+    display: flex;
+    /* line-height: 0; */
+}
+.link-github svg {
+    width: 1em;
+}
+
+.link-github:hover,
+.link-github:focus {
+    background: var(--clr-light);
+    color: var(--clr-orange);
+}
+
+#about ul {
+    --gap: 0.25em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    columns: 7em 4;
+    gap: var(--gap);
+}
+#about li {
+    align-self: start;
+    font-size: 1rem;
+    padding: 0.25em;
+    border: 1px solid var(--clr-orange);
+    margin-bottom: var(--gap);
+    border-radius: 0.2em;
+    break-inside: avoid;
+/*     overflow-wrap: break-word; */
+}
+#about section:nth-of-type(2) p:nth-of-type(2) {
+    font-weight: var(--fw-bold);
+    color: var(--clr-primary-500);
+} 
