@@ -397,17 +397,24 @@ header {
 header .container h1 {
     transform: translate(100vw, 0);
     animation: 1s header-intro 1.5s forwards ease-in;
-    width: max-content;
+    width: min-content;
+}
+@media (min-width: 900px) {
+    header .container h1 {
+        width: max-content;
+    }
 }
 header .container *:not(h1) {
     transform: translate(0, 100vh);
-    animation: other-intro 3.2s forwards ease-in;
+    animation: other-intro 3.3s forwards ease-in;
+}
+header .container a {
+    animation-delay: .5s;
 }
 @keyframes intro {
     0% { 
         clip-path: polygon(0 0, 50% 0, 100% 0, 100% 50%, 100% 100%, 50% 100%, 0 100%, 0 50%); 
     }
-    
     100% { 
         clip-path:  polygon(50% 50%, 50% 25%, 50% 50%, 75% 50%, 50% 50%, 50% 75%, 50% 50%, 25% 50%);
     }
@@ -416,7 +423,6 @@ header .container *:not(h1) {
     0% {
         transform: translate(100vw, 0);
     }
-
     100% {
         transform: translate(-50%, 0);
         margin-left: 50%;
