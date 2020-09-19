@@ -392,9 +392,18 @@ nav a:focus {
 }
 /* >>> TEST <<< */
 header {
-    animation: intro 2s;
+    animation: intro 1.5s;
 }
- @keyframes intro {
+header .container h1 {
+    transform: translate(100vw, 0);
+    animation: 1s header-intro 1.5s forwards ease-in;
+    width: max-content;
+}
+header .container *:not(h1) {
+    transform: translate(0, 100vh);
+    animation: other-intro 3.2s forwards ease-in;
+}
+@keyframes intro {
     0% { 
         clip-path: polygon(0 0, 50% 0, 100% 0, 100% 50%, 100% 100%, 50% 100%, 0 100%, 0 50%); 
     }
@@ -403,3 +412,21 @@ header {
         clip-path:  polygon(50% 50%, 50% 25%, 50% 50%, 75% 50%, 50% 50%, 50% 75%, 50% 50%, 25% 50%);
     }
 } 
+@keyframes header-intro {
+    0% {
+        transform: translate(100vw, 0);
+    }
+
+    100% {
+        transform: translate(-50%, 0);
+        margin-left: 50%;
+    }
+}
+@keyframes other-intro {
+    0% {
+        transform: translate(0, 100vh);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
