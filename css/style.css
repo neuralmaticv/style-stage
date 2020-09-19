@@ -390,13 +390,16 @@ nav a:focus {
     color: #e5e5e5;
     border: 2px solid var(--clr-orange);
 }
-
+/* >>> TEST <<< */
 header {
-    animation: intro 3s;
+    animation: intro 2s;
 }
-@keyframes intro {
-    0% { clip-path: polygon(0 0, 50% 0, 100% 0, 100% 50%, 100% 100%, 50% 100%, 0 100%, 0 50%); }
+ @keyframes intro {
+    0% { 
+        clip-path: polygon(0 0, 50% 0, 100% 0, 100% 50%, 100% 100%, 50% 100%, 0 100%, 0 50%); 
+    }
     
-    100% { clip-path:  polygon(50% 50%, 50% 25%, 50% 50%, 75% 50%, 50% 50%, 50% 75%, 50% 50%, 25% 50%); }
-  
-}
+    100% { 
+        clip-path:  polygon(50% 50%, 50% 25%, 50% 50%, 75% 50%, 50% 50%, 50% 75%, 50% 50%, 25% 50%);
+    }
+} 
