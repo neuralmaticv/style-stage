@@ -1,4 +1,5 @@
-/* Box sizing rules */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Raleway:wght@400..700&display=swap');
+
 *,
 *::before,
 *::after {
@@ -6,8 +7,8 @@
 }
 
 :root {
-    --ff-body: "PT Sanns", sans-serif;
-    --ff-heading: "PT Sans Narrow", sans-serif;
+    --ff-body: 'Raleway', sans-serif;;
+    --ff-heading: 'Orbitron', sans-serif;;
 
     --fw-normal: 400;
     --fw-bold: 700;
@@ -435,4 +436,16 @@ header .container a {
     100% {
         transform: translate(0, 0);
     }
+}
+
+h2 {
+    font-weight: 400;
+    animation: font 1.8s ease-in infinite; 
+}
+@keyframes font {
+    0%{font-weight: 400;}
+    25%{font-weight: 450;}
+    50%{font-weight: 500;}
+    75%{font-weight: 550;}
+    100%{font-weight: 600;}
 }
