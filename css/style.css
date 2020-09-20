@@ -20,19 +20,34 @@
     --clr-primary-500: #14213d;
 
     --clr-accent: #a3a3a3;
-    --clr-orange: #fca311;
+    --clr-orange: #fda312;
 
 
     --clr-light: #FFFFFF;
     --clr-dark: #000000;
 
     --clr-gradient: linear-gradient( 
-        var(--clr-primary-100), 
+        var(--clr-primary-300), 
         var(--clr-primary-500)
     );
 
     --clr--svg-1: invert(69%) sepia(50%) saturate(1936%) hue-rotate(351deg) brightness(100%) contrast(98%);
     --clr--svg-2: invert(11%) sepia(8%) saturate(6128%) hue-rotate(188deg) brightness(92%) contrast(94%);
+}
+::selection {
+    color: var(--clr-dark);
+    background: var(--clr-orange);
+}
+:focus {
+    outline: 2px solid var(--clr-accent);
+    outline-offset: 2px;
+}
+::-webkit-scrollbar {
+    background: var(--clr-primary-500);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--clr-primary-300);
+    border-radius: 100vw;
 }
 
 /* Remove default padding */
@@ -94,29 +109,6 @@ select {
   font: inherit;
 }
 
-:focus {
-    outline: 2px solid var(--clr-accent);
-    outline-offset: 2px;
-}
-
-html {
-    scrollbar-color: var(--clr-primary-300) var(--clr-primary-500);
-    font-size: 1.25rem;
-    font-size: clamp(1rem, 5vw, 1rem);
-    background: var(--clr-light);
-    scroll-padding-top: 7rem;
-    scroll-behavior: smooth;
-    overflow-x: hidden; 
-}
-
-::-webkit-scrollbar {
-    background: var(--clr-primary-500);
-}
-::-webkit-scrollbar-thumb {
-    background: var(--clr-primary-300);
-    border-radius: 100vw;
-}
-
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -127,12 +119,18 @@ html {
   }
 }
 
-::selection {
-    color: var(--clr-dark);
-    background: var(--clr-orange);
+html {
+    scrollbar-color: var(--clr-primary-300) var(--clr-primary-500);
+    font-size: 1.25rem;
+    font-size: clamp(1rem, 5vw, 1rem);
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+    overflow-x: hidden; 
 }
 
 body {
+    background-color: var(--clr-primary-500);
+    color: var(--clr-accent);
     margin: 0;
     font-family: var(--ff-body);
     line-height: 1.6;
@@ -147,10 +145,6 @@ body {
     position: absolute;
     white-space: nowrap;
     width: 1px;
-}
-
-svg { 
-    filter: var(--clr--svg-2);
 }
 
 section {
@@ -178,6 +172,9 @@ header > .container > * + * {
 header a {
     color: var(--clr-light);
 }
+svg { 
+    filter: var(--clr--svg-2);
+}
 
 h1, 
 h2, 
@@ -186,7 +183,7 @@ h3 {
 }
 
 h1 {
-    color: var(--clr-light);
+    color: var(--clr-primary-400);
     font-size: clamp(5rem, 20vw, 8rem);
     text-transform: uppercase;
     line-height: 0.9;
@@ -194,6 +191,7 @@ h1 {
     margin: 1rem calc(-50vw + 50%);
     text-align: center;
     position: relative;
+    text-shadow: 0 0.05em 0.2em rgba(111, 215, 236, 0.9);
 }
 h1::after {
     content: "";
@@ -220,7 +218,7 @@ article h2 {
 }
 
 a{
-    color: var(--clr-primary-300);
+    color: var(--clr-primary-200);
     font-weight: var(--fw-bold);
     text-decoration: none;
     position: relative;
@@ -233,7 +231,7 @@ a:not(.link-github)::after {
     left: -0.1em;
     right: -0.1em;
     bottom: 0;
-    height: 3px;
+    height: 1px;
     background-color: var(--clr-orange);
     z-index: -1;
     transition: transform 125ms ease-in-out;
@@ -428,6 +426,7 @@ header .container a {
 
 h2 {
     font-weight: 400;
+    text-shadow: 0 0.05em 0.2em rgba(252, 190, 17, 0.8);
     animation: font 2.5s alternate infinite; 
 }
 @keyframes font {
