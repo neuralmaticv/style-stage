@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Raleway:wght@400..700&display=swap');
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 :root {
     --ff-body: 'Raleway', sans-serif;;
     --ff-heading: 'Orbitron', sans-serif;;
@@ -48,6 +42,39 @@
 ::-webkit-scrollbar-thumb {
     background: var(--clr-primary-300);
     border-radius: 100vw;
+}
+/* global styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+    scrollbar-color: var(--clr-primary-300) var(--clr-primary-500);
+    font-size: 1.25rem;
+    font-size: clamp(1rem, 5vw, 1rem);
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+    overflow-x: hidden; 
+}
+
+body {
+    background-color: var(--clr-primary-500);
+    color: var(--clr-accent);
+    margin: 0;
+    font-family: var(--ff-body);
+    line-height: 1.6;
+    font-size: 1.25rem;
+}
+section {
+    margin-bottom: 2em;
+}
+
+.container {
+    padding: 1rem;
+    max-width: 75ch;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Remove default padding */
@@ -119,24 +146,7 @@ select {
   }
 }
 
-html {
-    scrollbar-color: var(--clr-primary-300) var(--clr-primary-500);
-    font-size: 1.25rem;
-    font-size: clamp(1rem, 5vw, 1rem);
-    scroll-padding-top: 7rem;
-    scroll-behavior: smooth;
-    overflow-x: hidden; 
-}
-
-body {
-    background-color: var(--clr-primary-500);
-    color: var(--clr-accent);
-    margin: 0;
-    font-family: var(--ff-body);
-    line-height: 1.6;
-    font-size: 1.25rem;
-}
-
+/* skip link */
 .skip-link:not(:focus):not(:active) {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
@@ -147,17 +157,7 @@ body {
     width: 1px;
 }
 
-section {
-    margin-bottom: 2em;
-}
-
-.container {
-    padding: 1rem;
-    max-width: 75ch;
-    margin-left: auto;
-    margin-right: auto;
-}
-
+/* header */
 header {
     text-align: center;
     min-height: 100vh;
@@ -165,23 +165,36 @@ header {
     align-items: center;
     color: var(--clr-primary-100);
     background-image: var(--clr-gradient);
+    animation: intro 1.5s;
 }
 header > .container > * + * {
     margin-top: 2rem;
 }
-header a {
-    color: var(--clr-light);
+header .container h1 {
+    transform: translate(100vw, 0);
+    animation: 1s header-intro 1.5s forwards ease-in;
+    width: min-content;
 }
-svg { 
-    filter: var(--clr--svg-2);
+header .container *:not(h1) {
+    transform: translate(0, 100vh);
+    animation: other-intro 3.3s forwards ease-in;
+}
+header .container a {
+    color: var(--clr-light);
+    animation-delay: .5s;
+}
+@media (min-width: 900px) {
+    header .container h1 {
+        width: max-content;
+    }
 }
 
+/* headings */
 h1, 
 h2, 
 h3 {
     font-family: var(--ff-heading);
 }
-
 h1 {
     color: var(--clr-primary-400);
     font-size: clamp(5rem, 20vw, 8rem);
@@ -216,23 +229,32 @@ article h2 {
     padding: 0.5em;
     border-radius: 0.25em;
 }
-
-a:not(.link-github):not(.sponsor-button) {
-    color: var(--clr-primary-200);
-    font-weight: var(--fw-bold);
-    overflow: hidden;
-    white-space: nowrap;
-    text-decoration-color: var(--clr-orange);
-    text-decoration-style: double;
-    text-underline-offset: 0.25em;
-    transition: all 200ms;
+h2 {
+    font-weight: 400;
+    text-shadow: 0 0.05em 0.2em rgba(252, 190, 17, 0.8);
+    animation: font 2.5s alternate infinite; 
 }
-a:not(.sponsor-button):hover,
-a:not(.sponsor-button):focus {
-  color: var(--clr-orange);
-  text-decoration-color:  var(--clr-primary-200);
+@media (min-width: 37em) {
+    article .container {
+        display: grid;
+        column-gap: 1em;
+        grid-template-columns: 1fr 5fr;
+    }
+    article h2 {
+        grid-column: 1 / 2;
+        position: sticky;
+        top: 7em;
+        font-size: 1rem;
+    }
+    article *:not(h2) {
+        grid-column: 2 / 3;
+    }
+    article p:first-of-type {
+        margin: 0;
+    }
 }
 
+/* navigation */
 nav {
     --border: 0.3em;
     background: var(--clr-primary-500);
@@ -268,6 +290,25 @@ nav a:focus {
     color: var(--clr-primary-300);
 }
 
+/* links */
+a:not(.link-github):not(.sponsor-button) {
+    color: var(--clr-primary-200);
+    font-weight: var(--fw-bold);
+    overflow: hidden;
+    white-space: nowrap;
+    text-decoration-color: var(--clr-orange);
+    text-decoration-style: double;
+    text-underline-offset: 0.25em;
+    transition: all 200ms;
+}
+a:not(.sponsor-button):hover,
+a:not(.sponsor-button):focus {
+  color: var(--clr-orange);
+  text-decoration-color:  var(--clr-primary-200);
+}
+svg { 
+    filter: var(--clr--svg-2);
+}
 .link-github {
     text-decoration: none;
     display: inline-flex;
@@ -289,6 +330,7 @@ nav a:focus {
     color: var(--clr-orange);
 }
 
+/* main */
 #about ul {
     --gap: 0.25em;
     list-style: none;
@@ -311,6 +353,7 @@ nav a:focus {
     color: var(--clr-primary-500);
 } 
 
+/* page and sponsor footer */
 .page-footer {
     background: var(--clr-primary-400);
     color: var(--clr-light);
@@ -368,46 +411,8 @@ nav a:focus {
 		justify-content: center;
 	}
 }
-@media (min-width: 37em) {
-    article .container {
-        display: grid;
-        column-gap: 1em;
-        grid-template-columns: 1fr 5fr;
-    }
-    article h2 {
-        grid-column: 1 / 2;
-        position: sticky;
-        top: 7em;
-        font-size: 1rem;
-    }
-    article *:not(h2) {
-        grid-column: 2 / 3;
-    }
-    article p:first-of-type {
-        margin: 0;
-    }
-}
 
-header {
-    animation: intro 1.5s;
-}
-header .container h1 {
-    transform: translate(100vw, 0);
-    animation: 1s header-intro 1.5s forwards ease-in;
-    width: min-content;
-}
-@media (min-width: 900px) {
-    header .container h1 {
-        width: max-content;
-    }
-}
-header .container *:not(h1) {
-    transform: translate(0, 100vh);
-    animation: other-intro 3.3s forwards ease-in;
-}
-header .container a {
-    animation-delay: .5s;
-}
+/* animations */
 @keyframes intro {
     0% { 
         clip-path: polygon(0 0, 50% 0, 100% 0, 100% 50%, 100% 100%, 50% 100%, 0 100%, 0 50%); 
@@ -432,12 +437,6 @@ header .container a {
     100% {
         transform: translate(0, 0);
     }
-}
-
-h2 {
-    font-weight: 400;
-    text-shadow: 0 0.05em 0.2em rgba(252, 190, 17, 0.8);
-    animation: font 2.5s alternate infinite; 
 }
 @keyframes font {
     0%{font-weight: 400;}
