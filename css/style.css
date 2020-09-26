@@ -445,3 +445,40 @@ svg {
     75%{font-weight: 550;}
     100%{font-weight: 600;}
 }
+
+@media (min-width: 60em) {
+    body {
+        display: grid;
+        grid-template-columns: 4fr 1fr;
+        column-gap: 1em;
+        grid-template-areas: 
+        "header header"
+        "nav nav"
+        "main aside-one"
+        "main aside-two"
+        "main ."
+        "footer footer"
+        "aside-three aside-three";
+    }
+    header {
+        grid-area: header;
+    }
+    nav {
+        grid-area: nav;
+    }
+    main {
+        grid-area: main;
+    }
+    .profile {
+        grid-area: aside-one;
+    }
+    #styles {
+        grid-area: aside-two;
+    }
+    footer {
+        grid-area: footer;
+    }
+    #sponsor-footer {
+        grid-area: aside-three;
+    }
+}
