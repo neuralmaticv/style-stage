@@ -461,6 +461,7 @@ svg {
     border: 5px solid var(--clr-orange);
     border-image: linear-gradient(45deg, var(--border)) 1% stretch;
     margin-top: 30px;
+    background: var(--clr-primary-400);
 }
 .profile {
     transform: rotate(-10deg);
@@ -471,6 +472,13 @@ svg {
     transform: rotate(0deg);
     color: var(--clr-light);
     transition: 350ms;
+}
+#styles:hover {
+    filter: drop-shadow(0 0 0.2rem hsla(var(--clr-neon-orange), 0.4))
+      drop-shadow(0.5rem 0.5rem 0.2rem hsla(var(--clr-neon-orange), 0.6))
+      drop-shadow(-0.5rem 0.5rem 0.2rem hsla(var(--clr-neon-orange), 0.6))
+      drop-shadow(0.5rem -0.5rem 0.2rem hsla(var(--clr-neon-orange), 0.6))
+      drop-shadow(-0.5rem -0.5rem 0.2rem hsla(var(--clr-neon-orange), 0.6));
 }
 
 /* animations */
