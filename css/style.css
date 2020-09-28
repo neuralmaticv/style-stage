@@ -27,9 +27,6 @@
         var(--clr-primary-500)
     );
 
-    --clr--svg-1: invert(69%) sepia(50%) saturate(1936%) hue-rotate(351deg) brightness(100%) contrast(98%);
-    --clr--svg-2: invert(11%) sepia(8%) saturate(6128%) hue-rotate(188deg) brightness(92%) contrast(94%);
-
     --border: hsl(var(--clr-dark-gray)), hsl(var(--clr-neon-orange)), hsl(var(--clr-dark-gray));
 }
 ::selection {
@@ -233,13 +230,13 @@ article h2 {
     padding: 0.5em;
     border-radius: 0.25em;
 }
-h2 {
+h2:not(.aside h2) {
     font-weight: 400;
     text-shadow: 0 0.05em 0.2em rgba(252, 190, 17, 0.8);
     animation: font 2.5s alternate infinite; 
 }
 @media (min-width: 37em) {
-    article .container {
+    article > .container {
         display: grid;
         column-gap: 1em;
         grid-template-columns: 1fr 5fr;
@@ -310,16 +307,14 @@ a:not(.sponsor-button):focus {
   color: var(--clr-orange);
   text-decoration-color:  var(--clr-primary-200);
 }
-svg { 
-    filter: var(--clr--svg-2);
-}
 .link-github {
     text-decoration: none;
     display: inline-flex;
     align-items: center;
     gap: 0.5em;
     background: var(--clr-orange);
-    padding: .3em .75em;
+    color: var(--clr-light);
+    padding: .5em 1.25em;
 }
 .link-github span {
     width: 1em;
@@ -327,6 +322,7 @@ svg {
 }
 .link-github svg {
     width: 1em;
+    fill: var(--clr-dark);
 }
 .link-github:hover,
 .link-github:focus {
@@ -362,9 +358,7 @@ svg {
     background: var(--clr-primary-400);
     color: var(--clr-light);
 }
-.page-footer a {
-    color: var(--clr-primary-100);
-}
+
 #sponsor-footer {
     width: 100%;
     max-width: 100%;
@@ -420,16 +414,16 @@ svg {
 @media (min-width: 60em) {
     body {
         display: grid;
-        grid-template-columns: 4fr 1fr;
+        grid-template-columns: minmax(14rem, max-content) 14rem minmax(0.5em, 1fr);
         column-gap: 1em;
         grid-template-areas: 
-        "header header"
-        "nav nav"
-        "main aside-one"
-        "main aside-two"
-        "main ."
-        "footer footer"
-        "aside-three aside-three";
+        "header header header"
+        "nav nav nav"
+        "main aside-one ."
+        "main aside-two ."
+        "main . ."
+        "footer footer footer"
+        "aside-three aside-three aside-three";
     }
     header {
         grid-area: header;
@@ -454,24 +448,63 @@ svg {
     }
 }
 
-.profile, 
+#files .container,
+.profile .container,
+#styles .container {
+    padding: 0;
+}
+#files,
+.profile,
 #styles {
     max-width: max-content;
-    /* border-radius: 10%; */
+    margin: 0 auto;
+    padding: 1em;
+}
+@media (min-width: 60em) {
+    .profile, #styles {
+        margin: 3em -1em 0;
+    }
+    #files {
+        margin-left: 10em;
+        transform: rotate(0deg);
+        margin-bottom: 3em;
+    }
+}
+#files {
+    color: var(--clr-light);
+    background: var(--clr-primary-400);
+    padding: 1.5em;
+    transform: rotate(5deg);
+    border-radius: 25px;
+}
+.profile, 
+#styles {
+    background: var(--clr-primary-400);
     border: 5px solid var(--clr-orange);
     border-image: linear-gradient(45deg, var(--border)) 1% stretch;
-    margin-top: 30px;
-    background: var(--clr-primary-400);
 }
 .profile {
     transform: rotate(-10deg);
     box-shadow: 0 0em 2em var(--clr-primary-100);
+    margin-bottom: 3em;
+}
+#styles {
+    transform: rotate(5deg);
+    margin-bottom: 3em;
+}
+#styles h2 {
+    font-family: var(--ff-body);
+    font-size: 1.25em;
+}
+.profile:hover,
+#styles:hover {
+    color: var(--clr-light);
+    border: none;
+    transition: 350ms;
 }
 .profile:hover {
     box-shadow: 0 0em 6em var(--clr-primary-100);
     transform: rotate(0deg);
-    color: var(--clr-light);
-    transition: 350ms;
 }
 #styles:hover {
     filter: drop-shadow(0 0 0.2rem hsla(var(--clr-neon-orange), 0.4))
@@ -480,6 +513,12 @@ svg {
       drop-shadow(0.5rem -0.5rem 0.2rem hsla(var(--clr-neon-orange), 0.6))
       drop-shadow(-0.5rem -0.5rem 0.2rem hsla(var(--clr-neon-orange), 0.6));
 }
+
+
+
+
+
+
 
 /* animations */
 @keyframes intro {
