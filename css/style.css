@@ -459,29 +459,15 @@ a:not(.sponsor-button):focus {
     max-width: max-content;
     margin: 0 auto;
     padding: 1em;
+    background: var(--clr-primary-400);
 }
-@media (min-width: 60em) {
-    .profile, #styles {
-        margin: 3em -1em 0;
-    }
-    #files {
-        margin-left: 10em;
-        transform: rotate(0deg);
-        margin-bottom: 3em;
-    }
-}
+
 #files {
     color: var(--clr-light);
     background: var(--clr-primary-400);
     padding: 1.5em;
-    transform: rotate(5deg);
+    transform: rotate(-5deg);
     border-radius: 25px;
-}
-.profile, 
-#styles {
-    background: var(--clr-primary-400);
-    border: 5px solid var(--clr-orange);
-    border-image: linear-gradient(45deg, var(--border)) 1% stretch;
 }
 .profile {
     transform: rotate(-10deg);
@@ -491,6 +477,7 @@ a:not(.sponsor-button):focus {
 #styles {
     transform: rotate(5deg);
     margin-bottom: 3em;
+    border-image: linear-gradient(45deg, var(--border)) 1% stretch;
 }
 #styles h2 {
     font-family: var(--ff-body);
@@ -500,25 +487,30 @@ a:not(.sponsor-button):focus {
 #styles:hover {
     color: var(--clr-light);
     border: none;
-    transition: 350ms;
 }
 .profile:hover {
     box-shadow: 0 0em 6em var(--clr-primary-100);
     transform: rotate(0deg);
+    transition: 450ms;
 }
+#files:hover,
 #styles:hover {
+    transition: 350ms;
     filter: drop-shadow(0 0 0.2rem hsla(var(--clr-neon-orange), 0.4))
       drop-shadow(0.5rem 0.5rem 0.2rem hsla(var(--clr-neon-orange), 0.6))
       drop-shadow(-0.5rem 0.5rem 0.2rem hsla(var(--clr-neon-orange), 0.6))
       drop-shadow(0.5rem -0.5rem 0.2rem hsla(var(--clr-neon-orange), 0.6))
       drop-shadow(-0.5rem -0.5rem 0.2rem hsla(var(--clr-neon-orange), 0.6));
 }
-
-
-
-
-
-
+@media (min-width: 60em) {
+    .profile, #styles {
+        margin: 3em -1em 0;
+    }
+    #files {
+        margin: 0 0 3em 10em;
+        transform: rotate(0deg);
+    }
+}
 
 /* animations */
 @keyframes intro {
