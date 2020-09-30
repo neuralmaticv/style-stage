@@ -456,18 +456,20 @@ a:not(.sponsor-button):focus {
 #files,
 .profile,
 #styles {
+    font-family: var(--ff-heading);
+    font-size: 0.85em;
     max-width: max-content;
     margin: 0 auto;
     padding: 1em;
     background: var(--clr-primary-400);
 }
-
 #files {
     color: var(--clr-light);
     background: var(--clr-primary-400);
+    text-align: center;
     padding: 1.5em;
-    transform: rotate(-5deg);
-    border-radius: 25px;
+    border: .5em solid var(--clr-orange);
+    border-image: linear-gradient(45deg, var(--border)) 1% stretch;
 }
 .profile {
     transform: rotate(-10deg);
@@ -480,7 +482,6 @@ a:not(.sponsor-button):focus {
     border-image: linear-gradient(45deg, var(--border)) 1% stretch;
 }
 #styles h2 {
-    font-family: var(--ff-body);
     font-size: 1.25em;
 }
 .profile:hover,
@@ -493,7 +494,6 @@ a:not(.sponsor-button):focus {
     transform: rotate(0deg);
     transition: 450ms;
 }
-#files:hover,
 #styles:hover {
     transition: 350ms;
     filter: drop-shadow(0 0 0.2rem hsla(var(--clr-neon-orange), 0.4))
