@@ -1,3 +1,15 @@
+/*
+* LICENSE - style only: CC BY-NC-SA
+* @link https://creativecommons.org/licenses/by-nc-sa/3.0/
+* Graphics copyright of Vladimir Mijic
+* 
+* Title: VCStyle
+* Author: Vladimir Mijic
+* GitHub: https://github.com/vladocodes
+* Instagram: @vlado.codes
+* Twitter: @vladocodes
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Raleway:wght@400..700&display=swap');
 
 :root {
@@ -358,7 +370,9 @@ a:not(.sponsor-button):focus {
     background: var(--clr-primary-400);
     color: var(--clr-light);
 }
-
+.page-footer a {
+    text-decoration: none;
+}
 #sponsor-footer {
     width: 100%;
     max-width: 100%;
@@ -494,6 +508,7 @@ a:not(.sponsor-button):focus {
     transform: rotate(0deg);
     transition: 450ms;
 }
+#files:hover,
 #styles:hover {
     transition: 350ms;
     filter: drop-shadow(0 0 0.2rem hsla(var(--clr-neon-orange), 0.4))
