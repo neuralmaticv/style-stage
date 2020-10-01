@@ -325,7 +325,7 @@ a:not(.sponsor-button):focus {
     color: var(--clr-light);
     padding: .5em 1.25em;
     border: 5px solid var(--clr-primary-200);
-    border-radius: 8px;
+    border-radius: 0.3em;
 }
 .link-github span {
     width: 1em;
@@ -334,7 +334,7 @@ a:not(.sponsor-button):focus {
 .link-github svg {
     width: 1em;
     fill: var(--clr-light);
-    transition: 300ms cubic-bezier(0.075, 0.82, 0.165, 1) all; 
+    transition: 450ms cubic-bezier(0.075, 0.82, 0.165, 1) all;
 }
 a.link-github:hover,
 a.link-github:focus {
