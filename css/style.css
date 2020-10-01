@@ -372,15 +372,27 @@ a.link-github:hover svg {
 
 /* page and sponsor footer */
 .page-footer {
+    text-align: center;
+    position: relative;
+    padding: 2.5rem;
     background: var(--clr-primary-400);
     color: var(--clr-light);
 }
 .page-footer ul {
-    list-style: "🌠" ;
+    /* list-style: "🌠" ; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 60em;
+    margin-bottom: 1em;
+    list-style: none;
 }
 .page-footer a {
     text-decoration: none;
-    margin-left: 0.5em;
+    margin-left: 0.3em;
 }
 #sponsor-footer {
     width: 100%;
