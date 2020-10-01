@@ -163,8 +163,8 @@ select {
 .skip-link {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 1em;
     animation: skip-link-intro 3.3s forwards ease-in;
+    text-decoration: none;
 }
 
 /* header */
@@ -286,10 +286,12 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
 }
 nav a{
     color: var(--clr-light);
+    text-decoration: none;
 }
 nav a::before,
 nav a::after {
