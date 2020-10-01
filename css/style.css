@@ -373,8 +373,12 @@ a.link-github:hover svg {
     background: var(--clr-primary-400);
     color: var(--clr-light);
 }
+.page-footer ul {
+    list-style: "🌠" ;
+}
 .page-footer a {
     text-decoration: none;
+    margin-left: 0.5em;
 }
 #sponsor-footer {
     width: 100%;
