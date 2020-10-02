@@ -306,7 +306,6 @@ nav a:focus {
 a:not(.link-github):not(.sponsor-button) {
     color: var(--clr-primary-200);
     font-weight: var(--fw-bold);
-    overflow: hidden;
     white-space: nowrap;
     text-decoration-color: var(--clr-orange);
     text-decoration-style: double;
