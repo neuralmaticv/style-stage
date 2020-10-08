@@ -278,10 +278,9 @@ nav {
 }
 @media (min-width: 37em) {
     nav {
-        position: sticky;
-        z-index: 100;
-        top: calc(var(--border)* -1);
-        bottom: calc(var(--border)* -1);
+      position: sticky;
+      z-index: 100;
+      top: calc(var(--border) * -1);
     }
 }
 nav ul {
@@ -397,10 +396,11 @@ a.link-github:hover svg {
 }
 .page-footer ul li a {
     text-decoration: none;
-    display: inline-block;
+    display: inline-flex;
     font-weight: bold;
     white-space: nowrap;
-    text-align: center;
+    justify-content: center;
+    gap: 0.5em;
     width: 100%;
     color: var(--clr-light) !important;
     background: var(--clr-primary-200);
@@ -519,6 +519,7 @@ a.link-github:hover svg {
     margin: 0 auto;
     padding: 1em;
     background: var(--clr-primary-400);
+    transition: 350ms ease-in;
 }
 #files {
     color: var(--clr-light);
@@ -532,6 +533,16 @@ a.link-github:hover svg {
     transform: rotate(-10deg);
     box-shadow: 0 0em 2em var(--clr-primary-100);
     margin-bottom: 3em;
+}
+.profile ul {
+    list-style: none;
+    padding: 0;
+}
+.profile > .container > a {
+    text-decoration: none;
+    padding: 0.3em;
+    background-color: var(--clr-primary-500);
+    border-radius: 15px;
 }
 #styles {
     transform: rotate(5deg);
@@ -549,11 +560,9 @@ a.link-github:hover svg {
 .profile:hover {
     box-shadow: 0 0em 6em var(--clr-primary-100);
     transform: rotate(0deg);
-    transition: 450ms;
 }
 #files:hover,
 #styles:hover {
-    transition: 350ms;
     filter: drop-shadow(0 0 0.2rem hsla(var(--clr-neon-orange), 0.4))
       drop-shadow(0.5rem 0.5rem 0.2rem hsla(var(--clr-neon-orange), 0.6))
       drop-shadow(-0.5rem 0.5rem 0.2rem hsla(var(--clr-neon-orange), 0.6))
