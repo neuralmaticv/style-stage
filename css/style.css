@@ -536,8 +536,7 @@ a.link-github:hover svg {
     background: var(--clr-primary-400);
     text-align: center;
     padding: 1.5em;
-    border: .5em solid var(--clr-light);
-    border-image: linear-gradient(45deg, var(--border)) 1% stretch;
+    border: 5px solid var(--clr-light);
 }
 .profile {
     transform: rotate(-10deg);
