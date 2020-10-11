@@ -123,7 +123,7 @@ select {
     background: var(--clr-primary-500);
 }
 ::-webkit-scrollbar-thumb {
-    background: var(--clr-primary-300);
+    background: var(--clr-primary-200);
     border-radius: 100vw;
 }
 
@@ -134,7 +134,7 @@ select {
   box-sizing: border-box;
 }
 html {
-    scrollbar-color: var(--clr-primary-300) var(--clr-primary-500);
+    scrollbar-color: var(--clr-primary-200) var(--clr-primary-500);
     font-size: 1.25rem;
     font-size: clamp(1rem, 5vw, 1rem);
     scroll-padding-top: 7rem;
