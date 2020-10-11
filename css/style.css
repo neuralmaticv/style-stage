@@ -3,7 +3,7 @@
 * @link https://creativecommons.org/licenses/by-nc-sa/3.0/
 * Graphics copyright of Vladimir Mijic
 * 
-* Title: VCStyle
+* Title: Cold Style
 * Author: Vladimir Mijic
 * GitHub: https://github.com/vladocodes
 * Instagram: @vlado.codes
@@ -26,20 +26,18 @@
     --clr-primary-500: #14213d;
 
     --clr-accent: #a3a3a3;
-    --clr-orange: #fda312;
-
-    --clr-neon-orange: 37, 98%, 53%;
-    --clr-dark-gray: 0, 0%, 64%;
-
     --clr-light: #FFFFFF;
     --clr-dark: #000000;
+
+    --clr-neon-blue: 199, 43%, 51%;
+    --clr-dark-gray: 0, 0%, 64%;
 
     --clr-gradient: linear-gradient( 
         var(--clr-primary-300), 
         var(--clr-primary-500)
     );
 
-    --border: hsl(var(--clr-dark-gray)), hsl(var(--clr-neon-orange)), hsl(var(--clr-dark-gray));
+    --border: hsl(var(--clr-dark-gray)), hsl(var(--clr-neon-blue)), hsl(var(--clr-dark-gray));
 }
 
 
@@ -115,7 +113,7 @@ select {
 
 ::selection {
     color: var(--clr-dark);
-    background: var(--clr-orange);
+    background: var(--clr-light);
 }
 :focus {
     outline: 2px solid var(--clr-accent);
@@ -224,7 +222,7 @@ h1::after {
     content: "";
     display: block;
     height: 5px;
-    background: var(--clr-orange);
+    background: var(--clr-light);
     width: 40%;
     margin: 2rem auto;
     opacity: 0.8;
@@ -232,24 +230,19 @@ h1::after {
 h1 + h2 {
     font-size: clamp(2rem, 20vw, 2.5rem);
     line-height: 1;
-    color: var(--clr-orange);
+    color: var(--clr-light);
 }
 article h2 {
     font-size: 1.5rem;
     line-height: 1;
     background-color: var(--clr-primary-400);
-    color: var(--clr-orange);
+    color: var(--clr-light);
     align-self: start;
     padding: 0.5em;
     border-radius: 0.25em;
 }
 article:last-of-type h3 {
     color: var(--clr-light);
-}
-h2:not(.aside h2) {
-    font-weight: 400;
-    text-shadow: 0 0.05em 0.2em rgba(252, 190, 17, 0.8);
-    animation: font 2.5s alternate infinite; 
 }
 @media (min-width: 37em) {
     article > .container {
@@ -277,8 +270,8 @@ nav {
     background: var(--clr-primary-500);
     padding: 1em;
     margin: 0 0 2em 0;
-    border-top: 0.3em solid var(--clr-orange);
-    border-bottom: 0.3em solid var(--clr-orange);
+    border-top: 0.3em solid var(--clr-light);
+    border-bottom: 0.3em solid var(--clr-light);
 }
 @media (min-width: 37em) {
     nav {
@@ -298,13 +291,13 @@ nav ul {
 nav ul a {
     display: inline-grid;
     padding: 0.5em;
-    color: var(--clr-light) !important;
+    color: var(--clr-accent) !important;
     text-decoration: none;
 }
 nav ul a::after {
     width: 50%;
     height: 0.25em;
-    background-color: var(--clr-light);
+    background-color: var(--clr-accent);
     opacity: 0.1;
     content: "";
     margin: 0 auto;
@@ -320,7 +313,7 @@ a:not(.link-github):not(.sponsor-button) {
     color: var(--clr-primary-200);
     font-weight: var(--fw-bold);
     white-space: nowrap;
-    text-decoration-color: var(--clr-orange);
+    text-decoration-color: var(--clr-light);
     text-decoration-style: double;
     text-underline-offset: 0.25em;
     transition: all 200ms;
@@ -328,7 +321,7 @@ a:not(.link-github):not(.sponsor-button) {
 a:not(.sponsor-button):hover,
 a:not(.sponsor-button):hover,
 a:not(.sponsor-button):focus {
-  color: var(--clr-orange);
+  color: var(--clr-light);
   text-decoration-color:  var(--clr-primary-200);
 }
 .link-github {
@@ -373,7 +366,7 @@ a.link-github:hover svg {
     align-self: start;
     font-size: 1rem;
     padding: 0.25em;
-    border: 1px solid var(--clr-orange);
+    border: 1px solid var(--clr-light);
     margin-bottom: var(--gap);
     border-radius: 0.2em;
     break-inside: avoid;
@@ -422,7 +415,7 @@ a.link-github:hover svg {
 }
 .page-footer ul li a:hover {
     background: transparent;
-    color: var(--clr-primary-200);
+    color: var(--clr-primary-200) !important;
 }
 #sponsor-footer {
     width: 100%;
@@ -437,7 +430,7 @@ a.link-github:hover svg {
     margin-left: auto;
     display: flex;
     font-size: 1rem;
-    color: var(--clr-orange);
+    color: var(--clr-light);
 }
 #sponsor-footer .sponsor-button {
     display: inline-flex;
@@ -451,27 +444,29 @@ a.link-github:hover svg {
     margin-left: 15px;
     color: var(--clr-dark);
     background-color: var(--clr-light);
-    border: 4px solid var(--clr-orange);
+    border: 4px solid var(--clr-primary-200);
     border-radius: 5px;
     transition: 180ms all ease-in-out; 
 }
-#sponsor-footer .sponsor-button:hover{
-    color: var(--clr-orange);
-    -webkit-filter: drop-shadow(0 0 0.2rem hsla(var(--clr-neon-orange), 0.4))
-      drop-shadow(0.5rem 0.5rem 0.2rem hsla(var(--clr-neon-orange), 0.6))
-      drop-shadow(-0.5rem 0.5rem 0.2rem hsla(var(--clr-neon-orange), 0.6))
-      drop-shadow(0.5rem -0.5rem 0.2rem hsla(var(--clr-neon-orange), 0.6))
-      drop-shadow(-0.5rem -0.5rem 0.2rem hsla(var(--clr-neon-orange), 0.6));
+#sponsor-footer .sponsor-button:hover {
+    -webkit-filter: drop-shadow(0 0 0.2rem hsla(var(--clr-neon-blue), 0.4))
+      drop-shadow(0.5rem 0.5rem 0.2rem hsla(var(--clr-neon-blue), 0.6))
+      drop-shadow(-0.5rem 0.5rem 0.2rem hsla(var(--clr-neon-blue), 0.6))
+      drop-shadow(0.5rem -0.5rem 0.2rem hsla(var(--clr-neon-blue), 0.6))
+      drop-shadow(-0.5rem -0.5rem 0.2rem hsla(var(--clr-neon-blue), 0.6));
       
-    filter: drop-shadow(0 0 0.2rem hsla(var(--clr-neon-orange), 0.4))
-      drop-shadow(0.5rem 0.5rem 0.2rem hsla(var(--clr-neon-orange), 0.6))
-      drop-shadow(-0.5rem 0.5rem 0.2rem hsla(var(--clr-neon-orange), 0.6))
-      drop-shadow(0.5rem -0.5rem 0.2rem hsla(var(--clr-neon-orange), 0.6))
-      drop-shadow(-0.5rem -0.5rem 0.2rem hsla(var(--clr-neon-orange), 0.6));
+    filter: drop-shadow(0 0 0.2rem hsla(var(--clr-neon-blue), 0.4))
+      drop-shadow(0.5rem 0.5rem 0.2rem hsla(var(--clr-neon-blue), 0.6))
+      drop-shadow(-0.5rem 0.5rem 0.2rem hsla(var(--clr-neon-blue), 0.6))
+      drop-shadow(0.5rem -0.5rem 0.2rem hsla(var(--clr-neon-blue), 0.6))
+      drop-shadow(-0.5rem -0.5rem 0.2rem hsla(var(--clr-neon-blue), 0.6));
 }
 @media (max-width: 60ch) {
     body {
         font-size: 1rem;
+    }
+    #sponsor-footer a {
+        margin-top: 1.25em;
     }
 	#sponsor-footer p {
 		flex-wrap: wrap;
@@ -540,7 +535,7 @@ a.link-github:hover svg {
     background: var(--clr-primary-400);
     text-align: center;
     padding: 1.5em;
-    border: .5em solid var(--clr-orange);
+    border: .5em solid var(--clr-light);
     border-image: linear-gradient(45deg, var(--border)) 1% stretch;
 }
 .profile {
@@ -560,8 +555,8 @@ a.link-github:hover svg {
 }
 #styles {
     transform: rotate(5deg);
+    box-shadow: 0 0em 2em var(--clr-light);
     margin-bottom: 3em;
-    border-image: linear-gradient(45deg, var(--border)) 1% stretch;
 }
 .profile h4,
 #styles h2 {
@@ -571,19 +566,18 @@ a.link-github:hover svg {
 .profile:hover,
 #styles:hover {
     color: var(--clr-light);
-    border: none;
+    transform: rotate(0deg);
 }
 .profile:hover {
     box-shadow: 0 0em 6em var(--clr-primary-100);
-    transform: rotate(0deg);
 }
 #files:hover,
 #styles:hover {
-    filter: drop-shadow(0 0 0.2rem hsla(var(--clr-neon-orange), 0.4))
-      drop-shadow(0.5rem 0.5rem 0.2rem hsla(var(--clr-neon-orange), 0.6))
-      drop-shadow(-0.5rem 0.5rem 0.2rem hsla(var(--clr-neon-orange), 0.6))
-      drop-shadow(0.5rem -0.5rem 0.2rem hsla(var(--clr-neon-orange), 0.6))
-      drop-shadow(-0.5rem -0.5rem 0.2rem hsla(var(--clr-neon-orange), 0.6));
+    filter: drop-shadow(0 0 0.2rem hsla(var(--clr-neon-blue), 0.4))
+      drop-shadow(0.5rem 0.5rem 0.2rem hsla(var(--clr-neon-blue), 0.6))
+      drop-shadow(-0.5rem 0.5rem 0.2rem hsla(var(--clr-neon-blue), 0.6))
+      drop-shadow(0.5rem -0.5rem 0.2rem hsla(var(--clr-neon-blue), 0.6))
+      drop-shadow(-0.5rem -0.5rem 0.2rem hsla(var(--clr-neon-blue), 0.6));
 }
 @media (min-width: 60em) {
     .profile, #styles {
